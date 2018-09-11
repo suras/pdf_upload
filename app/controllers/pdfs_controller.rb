@@ -28,6 +28,9 @@ class PdfsController < ApplicationController
 
     respond_to do |format|
       if @pdf.save
+        py_result =  `python "#{Rails.root.to_s}"/pyscript.py "#{@pdf.name}" #{@pdf.doc.path}` 
+        @pdf.py_result = py_result
+        @pdf.save
         format.html { redirect_to @pdf, notice: 'Pdf was successfully created.' }
         format.json { render :show, status: :created, location: @pdf }
       else

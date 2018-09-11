@@ -21,7 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *defaultRails.application.credentials.mysql[:db_name]
+  <<: *default
   adapter: mysql2
   encoding: utf8
   database: <%= Rails.application.credentials.mysql[:dbname]  %>

@@ -9,6 +9,10 @@
   <strong>Doc:</strong>
   <%= @pdf.doc %>
 </p>
+<p>
+ <strong>Result:</strong>
+<%= @pdf.py_result %>
+</p>
 
 <%= link_to 'Edit', edit_pdf_path(@pdf) %> |
 <%= link_to 'Back', pdfs_path %>
